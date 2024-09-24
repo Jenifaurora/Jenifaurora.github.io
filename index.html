@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>𝓐𝓾𝓻𝓸𝓻𝓪</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SQZD95VHN5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SQZD95VHN5');
+    </script>
+
+    <!-- Add this CSS for blinking cursor -->
+    <style>
+        .typing-text span {
+            border-right: 2px solid #b74b4b;
+            padding-right: 4px;
+            animation: blink 0.7s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">𝓐𝓾𝓻𝓸𝓻𝓪</a>
+        <nav>
+            <a href="https://discord.com/" class="active"> Discord ID: jenifcruz.</a>
+            <a href="https://github.com/Jenifaurora/Medical-Ultrasound-Node.js">Ultrasound .js code</a>
+            <a href="https://postimg.cc/hzW6RCQm">Medical accomplishment</a>
+            <a href="#">Graduation - 5 more years *sigh*</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="main.jpg" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Jeni</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>A 2nd year medical student with Clinical Medical Assistance certificate-license who codes discord bot/codes in leisure time - bot scripts in .js and .py languages, member of ORCHID-iD org with MIT license for codes. Staff in an Influencer community - Jawad.</p>
+            <div class="social-icons">
+                <a href="https://open.spotify.com/user/31b6yiiqni6bsqzfw572x3irdjna?si=b0b97838ecd94410"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://github.com/Jenifaurora"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/jenifaurora/?next=%2F"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="https://github.com/Jenifaurora?tab=repositories" class="btn">Repositories</a>
+            <a href="https://dreambeingtaken.github.io/" class="btn">My Silly Game</a>
+            <button id="playButton" class="btn">Play Music</button>
+            <button id="pauseButton" class="btn">Pause Music</button> <!-- New Pause Button -->
+        </div>
+    </section>
+
+    <audio id="lofiAudio" loop>
+        <source src="audio/lofi.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- JavaScript for Typing Animation -->
+    <script>
+        const phrases = [
+            "Medical Student",
+            "Discord Developer",
+            "Web Developer",
+            "Minecraft Plugin Coder",
+            "Orchid-iD Member"
+        ];
+
+        let currentPhraseIndex = 0;
+        let currentLetterIndex = 0;
+        const typingSpeed = 150;
+        const erasingSpeed = 100;
+        const delayBetweenPhrases = 2000; // Time between full phrases
+
+        const typingTextElement = document.querySelector('.typing-text span');
+
+        function typePhrase() {
+            if (currentLetterIndex < phrases[currentPhraseIndex].length) {
+                typingTextElement.textContent += phrases[currentPhraseIndex].charAt(currentLetterIndex);
+                currentLetterIndex++;
+                setTimeout(typePhrase, typingSpeed);
+            } else {
+                setTimeout(erasePhrase, delayBetweenPhrases);
+            }
+        }
+
+        function erasePhrase() {
+            if (currentLetterIndex > 0) {
+                typingTextElement.textContent = phrases[currentPhraseIndex].substring(0, currentLetterIndex - 1);
+                currentLetterIndex--;
+                setTimeout(erasePhrase, erasingSpeed);
+            } else {
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                setTimeout(typePhrase, typingSpeed);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(typePhrase, delayBetweenPhrases);
+        });
+    </script>
+
+    <!-- Audio Controls -->
+    <script>
+        const audio = document.getElementById('lofiAudio');
+
+        document.getElementById('playButton').addEventListener('click', function() {
+            audio.volume = 0.5; // Set the volume (0.0 to 1.0)
+            audio.play().catch(error => {
+                console.error('Audio playback failed:', error);
+            });
+        });
+
+        document.getElementById('pauseButton').addEventListener('click', function() {
+            audio.pause(); // Pause the audio
+        });
+    </script>
+</body>
+</html>
