@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap locations for both sites
 Sitemap: https://jenifaurora.github.io/sitemap.xml
-Sitemap: https://yixaaa.github.io/sitemap.xml
