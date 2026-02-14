@@ -201,6 +201,13 @@ span {
     color: black;
     box-shadow: 0 0 25px #b74b4b;
 }
+.button-group{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:16px;
+    margin-top:20px;
+}
 
 .typing-text {
     font-size: 3.4rem;
@@ -607,4 +614,5 @@ body::after{
         opacity:0;
     }
 }
+
 
