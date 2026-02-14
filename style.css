@@ -137,7 +137,7 @@ span {
 
 .home-content p {
     font-size: 1.6rem;
-    margin-top: 2rem; /* Add space between the typing text and the paragraph */
+    margin-top: 2rem; 
 }
 
 .home-img {
@@ -192,7 +192,7 @@ span {
     border: 2px solid #ffb7c5;
     transition: 0.3s ease;
     cursor: pointer;
-    margin: 10px 5px; /* Add margin for better spacing */
+    margin: 10px 5px; 
 }
 
 .btn:hover {
@@ -206,7 +206,7 @@ span {
     font-size: 3.4rem;
     font-weight: 600;
     min-width: 280px;
-    margin-bottom: 2rem; /* Space below the typing text */
+    margin-bottom: 2rem; 
 }
 
 .typing-text span {
@@ -221,7 +221,6 @@ span {
     }
 }
 
-/* Style for input fields */
 input[type="text"] {
     width: 100%;
     padding: 1.2rem;
@@ -240,7 +239,6 @@ input[type="text"]:focus {
     box-shadow: 0 0 25px #b74b4b;
 }
 
-/* Audio controls */
 #playButton,
 #pauseButton {
     padding: 1rem 2.5rem;
@@ -454,7 +452,7 @@ body::after{
         left:15px;
     }
 }
-/* BACK DEPTH LAYER */
+
 .soft-particles-back{
     position:fixed;
     inset:0;
@@ -467,7 +465,6 @@ body::after{
     animation:driftBack 40s linear infinite;
 }
 
-/* MICRO SPARKLES */
 .micro-sparkles{
     position:fixed;
     inset:0;
@@ -482,7 +479,6 @@ body::after{
     animation:sparkle 3s ease-in-out infinite alternate;
 }
 
-/* PARALLAX MOTION */
 @keyframes driftBack{
     from{background-position:0 0,0 0,0 0;}
     to{background-position:-400px 600px,300px -400px,-200px 300px;}
@@ -492,9 +488,7 @@ body::after{
     from{opacity:.3;}
     to{opacity:.8;}
 }
-/* ===== NEON AURA HOVER EFFECTS ===== */
 
-/* Buttons */
 .btn{
     position:relative;
     transition:.25s ease;
@@ -508,7 +502,6 @@ body::after{
         0 0 45px #b74b4b;
 }
 
-/* Social Icons */
 .social-icons a{
     transition:.25s ease;
 }
@@ -520,7 +513,6 @@ body::after{
         0 0 40px #b74b4b;
 }
 
-/* Profile Image */
 .home-img img{
     transition:.3s ease;
 }
@@ -532,9 +524,7 @@ body::after{
         0 0 80px #ffb7c5;
     transform:scale(1.05);
 }
-/* ===== PREMIUM GLOW TRAIL + GRADIENT AURA ===== */
 
-/* Gradient aura base */
 .btn::before{
     content:'';
     position:absolute;
@@ -554,7 +544,6 @@ body::after{
     z-index:-1;
 }
 
-/* Glow trail layer */
 .btn::after{
     content:'';
     position:absolute;
@@ -570,7 +559,6 @@ body::after{
     opacity:0;
 }
 
-/* Hover activation */
 .btn:hover::before{
     opacity:1;
     animation:gradientAura 6s linear infinite;
@@ -588,7 +576,6 @@ body::after{
       0 0 30px #b74b4b;
 }
 
-/* Animations */
 @keyframes gradientAura{
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
@@ -599,14 +586,12 @@ body::after{
     from{transform:translateX(-100%);}
     to{transform:translateX(100%);}
 }
-/* ===== RIPPLE CLICK EFFECT ===== */
 
 .btn{
     position:relative;
     overflow:hidden;
 }
 
-/* Ripple circle */
 .btn .ripple{
     position:absolute;
     border-radius:50%;
@@ -616,10 +601,10 @@ body::after{
     pointer-events:none;
 }
 
-/* Ripple animation */
 @keyframes ripple{
     to{
         transform:scale(4);
         opacity:0;
     }
 }
+
