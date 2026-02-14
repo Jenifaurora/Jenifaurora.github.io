@@ -4,10 +4,19 @@
     <meta name="google-site-verification" content="HVVm3qJw_qiYPEfTrso_s9yjkcg6Wlm_qOpqxMR1TTw" />
     <link rel="icon" type="image/webp" href="favicon.webp">
     <meta charset="UTF-8">
+    <link rel="canonical" href="https://jenifaurora.github.io/">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Jenifaurora">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>jenifaurora</title>
+    <title>Jenifaurora | Medical Student • Developer • Gym Brand Ambassador</title>
+<meta name="description" content="Jenifaurora (Jeni) — medical student, Discord & web developer, Minecraft plugin coder, and official gym brand ambassador. View projects, repositories, and ambassador links.">
+<meta property="og:title" content="Jenifaurora">
+<meta property="og:description" content="Medical student, developer, Minecraft plugin coder, and official gym brand ambassador.">
+<meta property="og:image" content="https://jenifaurora.github.io/jenifaurora-profile.jpg">
+<meta property="og:url" content="https://jenifaurora.github.io">
+<meta property="og:type" content="website">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SQZD95VHN5"></script>
@@ -33,25 +42,56 @@
             }
         }
     </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jenifaurora",
+  "alternateName": "Jeni",
+  "url": "https://jenifaurora.github.io",
+  "sameAs": [
+    "https://github.com/Jenifaurora",
+    "https://discipline-over-motivation.com/?ref=jenifaurora"
+  ],
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Discipline Over Motivation Co",
+    "url": "https://discipline-over-motivation.com"
+  }
+}
+</script>
+
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">jenifaurora</a>
-        <nav>
-            <a href="https://discord.com/" class="active"> Discord ID: jenifcruz.</a>
-            <a href="https://github.com/Jenifaurora/Medical-Ultrasound-Node.js">Ultrasound .js code</a>
+    <div class="soft-particles"></div>
+    <div class="soft-particles-back"></div>
+    <div class="micro-sparkles"></div>
+
+
+<header>
+    <a href="/" class="logo">jenifaurora</a>
+    <div class="menu-toggle">&#9776;</div>
+    <nav>
+            <a href="https://discipline-over-motivation.com/?ref=jenifaurora" class="active">Gym Brand – 10% OFF (Jen)</a>
+            <a href="https://discord.com/"> Discord ID: jenifcruz.</a>
+            <a href="https://github.com/Jenifaurora/Medical-Ultrasound-Node.js" class="active">Ultrasound .js code</a>
             <a href="https://postimg.cc/hzW6RCQm">Medical accomplishment</a>
             <a href="#">Graduation - 5 more years *sigh*</a>
         </nav>
     </header>
     <section class="home">
         <div class="home-img">
-            <img src="main.jpg" alt="">
+            <img src="jenifaurora-profile.jpg" alt="Jenifaurora profile photo">
         </div>
         <div class="home-content">
             <h1>Hi, It's <span>Jeni</span></h1>
             <h3 class="typing-text">I'm a <span></span></h3>
-            <p>Jenifaurora a.k.a Jeni, A 18 year old 2nd-yr medical student and brand ambassdor of Gym brand disciplineovermotivationco with Clinical Medical Assistance certificate-license who codes discord bot/codes and minecraft mods/plugins in leisure time - bot scripts in .js and .py languages, member of ORCHID-iD org with MIT license for codes. </p>
+            <p>
+Jenifaurora (Jeni), 18-year-old 2nd-year medical student with CMA licensing, Discord & Web developer,
+Minecraft plugin coder, ORCHID-iD member, Official Brand Ambassador for Discipline Over Motivation Co.
+Use code <strong>Jen</strong> for 10% OFF.
+</p>
+
             <div class="social-icons">
                 <a href="https://open.spotify.com/user/31b6yiiqni6bsqzfw572x3irdjna?si=b0b97838ecd94410"><i class="fa-brands fa-spotify"></i></a>
                 <a href="https://github.com/Jenifaurora"><i class="fa-brands fa-github"></i></a>
@@ -61,8 +101,24 @@
             <a href="https://dreambeingtaken.github.io/" class="btn">My Silly Game</a>
             <button id="playButton" class="btn">Play Music</button>
             <button id="pauseButton" class="btn">Pause Music</button> <!-- New Pause Button -->
-        </div>
-    </section>
+        <div class="scroll-arrow" id="scrollArrow">▼</div>
+
+</div>
+</section>
+
+<section class="ambassador" id="ambassador">
+
+
+    <h2>Official Gym Brand Ambassador</h2>
+    <p>
+        I am an official ambassador.<br>
+        Use code <strong>Jen</strong> for <strong>10% OFF</strong>.
+    </p>
+
+    <a href="https://discipline-over-motivation.com/?ref=jenifaurora" class="btn pulse-btn" target="_blank">
+        Shop With My Code
+    </a>
+</section>
 
     <audio id="lofiAudio" loop>
         <source src="audio/lofi.mp3" type="audio/mpeg">
@@ -119,6 +175,7 @@
 
         document.getElementById('playButton').addEventListener('click', function() {
             audio.volume = 0.5; // Set the volume (0.0 to 1.0)
+
             audio.play().catch(error => {
                 console.error('Audio playback failed:', error);
             });
@@ -126,8 +183,50 @@
 
         document.getElementById('pauseButton').addEventListener('click', function() {
             audio.pause(); // Pause the audio
+
         });
     </script>
+<script>
+document.getElementById('scrollArrow').addEventListener('click', function(){
+    document.getElementById('ambassador').scrollIntoView({behavior:'smooth'});
+});
+</script>
+<a href="https://discipline-over-motivation.com/?ref=jenifaurora" class="discount-badge" target="_blank">
+  10% OFF<br>Code: Jen
+</a>
+<a href="https://github.com/Jenifaurora" class="verified-badge" target="_blank">
+✔ VERIFIED<br>Official
+</a>
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
+</script>
+<script>
+document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function (e) {
+
+        const circle = document.createElement('span');
+        circle.classList.add('ripple');
+
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+
+        circle.style.width = circle.style.height = size + 'px';
+        circle.style.left = e.clientX - rect.left - size / 2 + 'px';
+        circle.style.top = e.clientY - rect.top - size / 2 + 'px';
+
+        this.appendChild(circle);
+
+        setTimeout(() => {
+            circle.remove();
+        }, 600);
+    });
+});
+</script>
+
 </body>
 </html>
-
