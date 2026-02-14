@@ -18,7 +18,7 @@
 <meta property="og:url" content="https://jenifaurora.github.io">
 <meta property="og:type" content="website">
 
-    <!-- Google tag (gtag.js) -->
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SQZD95VHN5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -28,7 +28,7 @@
       gtag('config', 'G-SQZD95VHN5');
     </script>
 
-    <!-- Add this CSS for blinking cursor -->
+    
     <style>
         .typing-text span {
             border-right: 2px solid #b74b4b;
@@ -100,7 +100,7 @@ Use code <strong>Jen</strong> for 10% OFF.
             <a href="https://github.com/Jenifaurora?tab=repositories" class="btn">Repositories</a>
             <a href="https://dreambeingtaken.github.io/" class="btn">My Silly Game</a>
             <button id="playButton" class="btn">Play Music</button>
-            <button id="pauseButton" class="btn">Pause Music</button> <!-- New Pause Button -->
+            <button id="pauseButton" class="btn">Pause Music</button> 
         <div class="scroll-arrow" id="scrollArrow">▼</div>
 
 </div>
@@ -125,7 +125,6 @@ Use code <strong>Jen</strong> for 10% OFF.
         Your browser does not support the audio element.
     </audio>
 
-    <!-- JavaScript for Typing Animation -->
     <script>
         const phrases = [
             "Medical Student",
@@ -139,8 +138,7 @@ Use code <strong>Jen</strong> for 10% OFF.
         let currentLetterIndex = 0;
         const typingSpeed = 150;
         const erasingSpeed = 100;
-        const delayBetweenPhrases = 2000; // Time between full phrases
-
+        const delayBetweenPhrases = 2000;
         const typingTextElement = document.querySelector('.typing-text span');
 
         function typePhrase() {
@@ -169,12 +167,12 @@ Use code <strong>Jen</strong> for 10% OFF.
         });
     </script>
 
-    <!-- Audio Controls -->
+    
     <script>
         const audio = document.getElementById('lofiAudio');
 
         document.getElementById('playButton').addEventListener('click', function() {
-            audio.volume = 0.5; // Set the volume (0.0 to 1.0)
+            audio.volume = 0.5; // 
 
             audio.play().catch(error => {
                 console.error('Audio playback failed:', error);
@@ -182,7 +180,7 @@ Use code <strong>Jen</strong> for 10% OFF.
         });
 
         document.getElementById('pauseButton').addEventListener('click', function() {
-            audio.pause(); // Pause the audio
+            audio.pause(); 
 
         });
     </script>
@@ -230,3 +228,4 @@ document.querySelectorAll('.btn').forEach(button => {
 
 </body>
 </html>
+
