@@ -12,6 +12,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -125,7 +126,7 @@ section {
     line-height: 1.3;
 }
 
-span {
+.home-content span {
     color: #b74b4b;
 }
 
@@ -137,7 +138,8 @@ span {
 
 .home-content p {
     font-size: 1.6rem;
-    margin-top: 2rem; 
+    margin-top: 2rem;
+    max-width: 520px;
 }
 
 .home-img {
@@ -148,14 +150,9 @@ span {
     position: relative;
     width: 32vw;
     border-radius: 50%;
-    box-shadow: 0 0 25px solid #b74b4b;
+    box-shadow: 0 0 25px #b74b4b;
     cursor: pointer;
     transition: 0.2s linear;
-}
-
-.home-img img:hover {
-    font-size: 1.8rem;
-    font-weight: 500;
 }
 
 .social-icons a {
@@ -190,9 +187,11 @@ span {
     letter-spacing: 0.3rem;
     font-weight: 600;
     border: 2px solid #ffb7c5;
-    transition: 0.3s ease;
     cursor: pointer;
-    margin: 10px 5px; 
+    margin: 10px 5px;
+    position: relative;
+    overflow: hidden;
+    transition: .25s ease;
 }
 
 .btn:hover {
@@ -252,9 +251,10 @@ input[type="text"]:focus {
     margin: 10px 5px;
 }
 .ambassador{
-    text-align:center;
-    padding:6rem 9%;
-    background:#0e0e0e;
+    text-align: center;
+    padding: 6rem 9%;
+    background: #0e0e0e;
+    min-height: auto;
 }
 
 .ambassador h2{
@@ -304,22 +304,12 @@ input[type="text"]:focus {
 }
 
 }
-.home-content p{
-    max-width: 520px;
-}
 @media(max-width:768px){
     .ambassador{
         padding:3rem 9%;
     }
 }
 
-.ambassador{
-    min-height:auto;
-}
-
-html{
- scroll-behavior:smooth;
-}
 .scroll-arrow{
     width:60px;
     height:60px;
@@ -342,7 +332,7 @@ html{
     100%{transform:translateY(0); opacity:.5;}
 }
 .pulse-btn{
-    animation:shopPulse 2s infinite;
+    animation:shopPulse 2s 6;
 }
 
 @keyframes shopPulse{
@@ -363,7 +353,7 @@ html{
     font-weight:700;
     box-shadow:0 0 20px #ffb7c5;
     z-index:1000;
-    animation:floatBadge 2s infinite;
+    animation:floatBadge 3s infinite;
 }
 
 @keyframes floatBadge{
@@ -424,7 +414,7 @@ html{
       radial-gradient(circle at 15% 85%, rgba(255,183,197,.45) 3px, transparent 5px),
       radial-gradient(circle at 35% 10%, rgba(183,75,75,.4) 4px, transparent 6px),
       radial-gradient(circle at 75% 90%, rgba(255,183,197,.45) 3px, transparent 5px);
-    animation:floatParticles 12s linear infinite;
+    animation:floatParticles 30s linear infinite;
     filter: drop-shadow(0 0 6px #ffb7c5);
 }
 
@@ -483,7 +473,7 @@ body::after{
       radial-gradient(circle at 80% 30%, rgba(255,255,255,.4) 1px, transparent 2px),
       radial-gradient(circle at 30% 90%, rgba(255,255,255,.5) 1px, transparent 2px),
       radial-gradient(circle at 50% 10%, rgba(255,255,255,.4) 1px, transparent 2px);
-    animation:sparkle 3s ease-in-out infinite alternate;
+    animation:sparkle 6s ease-in-out infinite alternate;
 }
 
 @keyframes driftBack{
@@ -495,12 +485,6 @@ body::after{
     from{opacity:.3;}
     to{opacity:.8;}
 }
-
-.btn{
-    position:relative;
-    transition:.25s ease;
-}
-
 .btn:hover{
     transform:scale(1.06);
     box-shadow:
@@ -528,7 +512,7 @@ body::after{
     box-shadow:
         0 0 25px #ffb7c5,
         0 0 50px #b74b4b,
-        0 0 80px #ffb7c5;
+        0 0 40px #ffb7c5;
     transform:scale(1.05);
 }
 
@@ -545,7 +529,7 @@ body::after{
         #ffb7c5
     );
     background-size:300% 300%;
-    filter:blur(12px);
+    filter:blur(6px);
     opacity:0;
     transition:.4s ease;
     z-index:-1;
@@ -594,10 +578,6 @@ body::after{
     to{transform:translateX(100%);}
 }
 
-.btn{
-    position:relative;
-    overflow:hidden;
-}
 
 .btn .ripple{
     position:absolute;
@@ -615,4 +595,17 @@ body::after{
     }
 }
 
+@media(max-width:768px){
+  .soft-particles,
+  .soft-particles-back,
+  .micro-sparkles{
+      display:none;
+  }
+}
 
+.scroll-arrow,
+.btn,
+.social-icons a,
+.home-img img{
+    will-change: transform;
+}
