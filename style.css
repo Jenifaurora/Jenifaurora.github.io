@@ -609,3 +609,531 @@ body::after{
 .home-img img{
     will-change: transform;
 }
+
+
+/* ===== Jenifaurora contrast, vignette and footer finish ===== */
+body {
+    position: relative;
+    isolation: isolate;
+    color: #ffffff;
+    background:
+        radial-gradient(ellipse at 18% 28%, rgba(100, 35, 58, 0.20), transparent 38%),
+        radial-gradient(ellipse at 82% 72%, rgba(74, 28, 51, 0.16), transparent 40%),
+        #050405;
+}
+
+/* Restore the pronounced dark-corner vignette from the original look. */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse 74% 86% at 50% 46%,
+        rgba(0, 0, 0, 0) 25%,
+        rgba(0, 0, 0, 0.24) 53%,
+        rgba(0, 0, 0, 0.62) 77%,
+        rgba(0, 0, 0, 0.96) 100%
+    );
+}
+
+.soft-particles-back {
+    z-index: 0;
+}
+
+.soft-particles {
+    z-index: 1;
+    animation: floatParticles 30s linear infinite;
+    will-change: background-position;
+}
+
+.micro-sparkles {
+    z-index: 1;
+}
+
+header,
+.site-footer {
+    position: relative;
+    z-index: 3;
+}
+
+/* Let the vignette shade section backgrounds; lift each section's content above it. */
+section {
+    position: relative;
+    z-index: auto;
+}
+
+section > * {
+    position: relative;
+    z-index: 3;
+}
+
+header {
+    position: fixed;
+    z-index: 1000;
+}
+
+.discount-badge,
+.verified-badge {
+    z-index: 1001;
+}
+
+.home {
+    background: transparent;
+}
+
+/* The reference look uses crisp white copy, not faded grey text. */
+body,
+.home-content p,
+.ambassador p,
+.home-content h1,
+.home-content h3,
+.ambassador h2,
+.music-heading p,
+.music-release-artist {
+    color: #ffffff;
+}
+
+.home-content p {
+    opacity: 1;
+    line-height: 1.85;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+}
+
+.home-content p strong,
+.ambassador p strong {
+    color: #ffb7c5;
+}
+
+.music-section {
+    min-height: auto;
+    padding: 8.5rem 9% 9rem;
+    background: rgba(9, 8, 9, 0.88);
+    border-top: 1px solid rgba(255, 183, 197, 0.16);
+}
+
+.music-inner {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.music-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 3.5rem;
+    border-bottom: 1px solid rgba(255, 183, 197, 0.18);
+}
+
+.music-heading h2 {
+    color: #fff;
+    font-size: clamp(3.8rem, 6vw, 6.2rem);
+    font-weight: 700;
+    letter-spacing: -0.065em;
+    line-height: 1;
+}
+
+.music-heading h2 span {
+    color: #b74b4b;
+}
+
+.music-heading p {
+    color: #fff;
+    font-size: 1.45rem;
+}
+
+.music-layout {
+    display: grid;
+    grid-template-columns: minmax(230px, 0.78fr) minmax(320px, 1.22fr);
+    align-items: center;
+    gap: clamp(3rem, 6vw, 7rem);
+}
+
+.music-release {
+    min-width: 0;
+    padding: 2rem 0 2rem 0.4rem;
+}
+
+.music-release-meta {
+    color: #ffb7c5;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+}
+
+.music-release h3 {
+    margin: 2rem 0 1.4rem;
+    color: #fff;
+    font-size: clamp(4rem, 6.1vw, 7rem);
+    font-weight: 600;
+    letter-spacing: -0.075em;
+    line-height: 0.98;
+}
+
+.music-release-artist {
+    color: #fff;
+    font-size: 1.45rem;
+}
+
+.music-spotify-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-top: 3rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid rgba(255, 183, 197, 0.75);
+    color: #ffb7c5;
+    font-size: 1.45rem;
+    font-weight: 600;
+    transition: color 180ms ease, border-color 180ms ease, gap 180ms ease;
+}
+
+.music-spotify-link:hover {
+    gap: 1.3rem;
+    color: #fff;
+    border-color: #fff;
+}
+
+.music-spotify-link i {
+    font-size: 1.8rem;
+}
+
+.music-player-wrap {
+    min-width: 0;
+    padding: 0.7rem;
+    border: 1px solid rgba(255, 183, 197, 0.2);
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.spotify-embed {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 352px;
+    border: 0;
+    border-radius: 1rem;
+    background: #121212;
+}
+
+.site-footer {
+    padding: 2.6rem 9% 3.2rem;
+    text-align: center;
+    background: rgba(3, 3, 3, 0.92);
+    border-top: 1px solid rgba(255, 183, 197, 0.12);
+}
+
+.site-footer p {
+    color: #fff;
+    font-size: 1.25rem;
+    letter-spacing: 0.035em;
+}
+
+@media (max-width: 850px) {
+    .music-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .music-release {
+        padding: 1rem 0 2.5rem;
+    }
+
+    .music-release h3 {
+        font-size: clamp(4.8rem, 12vw, 7rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .soft-particles,
+    .soft-particles-back,
+    .micro-sparkles {
+        display: block;
+    }
+
+    .soft-particles {
+        opacity: 0.68;
+    }
+
+    .music-section {
+        padding: 6.5rem 6% 7rem;
+    }
+
+    .music-heading {
+        display: block;
+        margin-bottom: 2.5rem;
+    }
+
+    .music-heading p {
+        margin-top: 1rem;
+    }
+
+    .music-player-wrap {
+        padding: 0.4rem;
+        border-radius: 1.1rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .site-footer {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+}
+
+
+/* ===== Ambassador panel: match the supplied reference ===== */
+.ambassador {
+    width: min(92%, 1100px);
+    min-height: 0;
+    margin: 2rem auto 7rem;
+    padding: 6rem clamp(2rem, 6vw, 7rem);
+    text-align: center;
+    border: 1px solid rgba(255, 183, 197, 0.20);
+    border-radius: 2.4rem;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(183, 75, 75, 0.13), transparent 66%),
+        rgba(14, 12, 15, 0.94);
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.34);
+}
+
+.ambassador h2 {
+    margin-bottom: 2rem;
+    color: #fff;
+    font-size: clamp(2.5rem, 3.2vw, 3.2rem);
+    letter-spacing: -0.035em;
+}
+
+.ambassador p {
+    margin-bottom: 2.6rem;
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 1.8;
+}
+
+.ambassador .btn {
+    margin: 0;
+}
+
+/* ===== Spotify playback-responsive glow and equalizer ===== */
+.music-player-wrap {
+    position: relative;
+    padding: 1.2rem;
+    border: 1px solid rgba(255, 183, 197, 0.24);
+    border-radius: 1.8rem;
+    background: rgba(18, 16, 19, 0.78);
+    box-shadow: 0 1.5rem 4.5rem rgba(0, 0, 0, 0.30);
+    transition: border-color 350ms ease, box-shadow 350ms ease, background-color 350ms ease;
+}
+
+.spotify-player-status {
+    min-height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 0 0.3rem 0.9rem;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+}
+
+.spotify-visualizer {
+    height: 1.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.spotify-visualizer i {
+    display: block;
+    width: 3px;
+    height: 5px;
+    border-radius: 3px;
+    background: #ffb7c5;
+    opacity: 0.72;
+    transform-origin: center;
+}
+
+.music-player-wrap.is-playing {
+    border-color: rgba(255, 183, 197, 0.78);
+    background-color: rgba(35, 15, 25, 0.88);
+    animation: spotifyPlayerGlow 2.8s ease-in-out infinite;
+}
+
+.music-player-wrap.is-playing .spotify-player-status {
+    color: #ffb7c5;
+}
+
+.music-player-wrap.is-playing .spotify-visualizer i {
+    opacity: 1;
+    animation: spotifyEqualizer 850ms ease-in-out infinite alternate;
+}
+
+.music-player-wrap.is-playing .spotify-visualizer i:nth-child(2) { animation-delay: -210ms; }
+.music-player-wrap.is-playing .spotify-visualizer i:nth-child(3) { animation-delay: -430ms; }
+.music-player-wrap.is-playing .spotify-visualizer i:nth-child(4) { animation-delay: -120ms; }
+.music-player-wrap.is-playing .spotify-visualizer i:nth-child(5) { animation-delay: -320ms; }
+
+@keyframes spotifyEqualizer {
+    0% { height: 4px; }
+    45% { height: 17px; }
+    100% { height: 7px; }
+}
+
+@keyframes spotifyPlayerGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 rgba(255, 183, 197, 0), 0 1.5rem 4.5rem rgba(0, 0, 0, 0.30);
+    }
+    50% {
+        box-shadow: 0 0 2.2rem rgba(255, 126, 164, 0.22), 0 0 4.5rem rgba(183, 75, 75, 0.16), 0 1.5rem 4.5rem rgba(0, 0, 0, 0.30);
+    }
+}
+
+.spotify-embed {
+    display: block;
+    width: 100%;
+    min-width: 280px;
+    min-height: 352px;
+    border: 0;
+    border-radius: 1.1rem;
+    overflow: hidden;
+}
+
+/* The Spotify iFrame API replaces the mount element with its own iframe. */
+.music-player-wrap > iframe {
+    display: block;
+    width: 100%;
+    min-width: 280px;
+    min-height: 352px;
+    border: 0;
+    border-radius: 1.1rem;
+}
+
+.spotify-fallback {
+    min-height: 352px;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 1.1rem;
+    background: #191719;
+    color: #fff;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.spotify-fallback a {
+    color: #ffb7c5;
+    text-decoration: underline;
+}
+
+/* Keep the ambassador layout comfortable on phones. */
+@media (max-width: 768px) {
+    .ambassador {
+        width: 90%;
+        margin: 1rem auto 5rem;
+        padding: 4.2rem 2rem;
+        border-radius: 1.8rem;
+    }
+
+    .ambassador p {
+        font-size: 1.55rem;
+    }
+
+    .music-player-wrap {
+        padding: 0.7rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .music-player-wrap.is-playing,
+    .music-player-wrap.is-playing .spotify-visualizer i {
+        animation: none !important;
+    }
+
+    .music-player-wrap.is-playing .spotify-visualizer i {
+        height: 9px;
+    }
+}
+
+
+/* ===== Subtle desktop cursor glow ===== */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2005;
+    width: 25px;
+    height: 25px;
+    display: none;
+    border: 1px solid rgba(255, 183, 197, 0.76);
+    border-radius: 50%;
+    background: rgba(255, 183, 197, 0.045);
+    box-shadow: 0 0 12px rgba(255, 183, 197, 0.24), 0 0 28px rgba(183, 75, 75, 0.16);
+    pointer-events: none;
+    opacity: 0;
+    will-change: transform;
+    transition: opacity 160ms ease, width 180ms ease, height 180ms ease,
+                border-color 180ms ease, background-color 180ms ease,
+                box-shadow 180ms ease;
+}
+
+.custom-cursor::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ffd1dc;
+    box-shadow: 0 0 9px rgba(255, 183, 197, 0.9);
+    transform: translate(-50%, -50%);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .custom-cursor {
+        display: block;
+    }
+
+    body.has-custom-cursor,
+    body.has-custom-cursor * {
+        cursor: none !important;
+    }
+
+    body.has-custom-cursor input,
+    body.has-custom-cursor textarea,
+    body.has-custom-cursor [contenteditable="true"] {
+        cursor: text !important;
+    }
+
+    .custom-cursor.is-visible {
+        opacity: 1;
+    }
+
+    .custom-cursor.is-hovering {
+        width: 37px;
+        height: 37px;
+        border-color: rgba(255, 183, 197, 0.98);
+        background: rgba(255, 183, 197, 0.095);
+        box-shadow: 0 0 17px rgba(255, 183, 197, 0.38), 0 0 38px rgba(183, 75, 75, 0.22);
+    }
+
+    .custom-cursor.is-pressed {
+        width: 17px;
+        height: 17px;
+        background: rgba(255, 183, 197, 0.2);
+    }
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+    .custom-cursor {
+        display: none !important;
+    }
+}
