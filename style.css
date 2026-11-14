@@ -401,21 +401,46 @@ input[type="text"]:focus {
     inset:0;
     pointer-events:none;
     z-index:0;
-    background:
-      radial-gradient(circle at 10% 20%, rgba(255,183,197,.6) 4px, transparent 6px),
-      radial-gradient(circle at 20% 40%, rgba(255,183,197,.5) 3px, transparent 5px),
-      radial-gradient(circle at 30% 70%, rgba(183,75,75,.5) 4px, transparent 6px),
-      radial-gradient(circle at 40% 30%, rgba(255,183,197,.45) 3px, transparent 5px),
-      radial-gradient(circle at 50% 80%, rgba(183,75,75,.45) 4px, transparent 6px),
-      radial-gradient(circle at 60% 50%, rgba(255,183,197,.5) 3px, transparent 5px),
-      radial-gradient(circle at 70% 20%, rgba(255,183,197,.4) 4px, transparent 6px),
-      radial-gradient(circle at 80% 60%, rgba(183,75,75,.4) 3px, transparent 5px),
-      radial-gradient(circle at 90% 40%, rgba(255,183,197,.5) 4px, transparent 6px),
-      radial-gradient(circle at 15% 85%, rgba(255,183,197,.45) 3px, transparent 5px),
-      radial-gradient(circle at 35% 10%, rgba(183,75,75,.4) 4px, transparent 6px),
-      radial-gradient(circle at 75% 90%, rgba(255,183,197,.45) 3px, transparent 5px);
-    animation:floatParticles 30s linear infinite;
-    filter: drop-shadow(0 0 6px #ffb7c5);
+}
+
+/* Keep each animated dot tiny: transform updates can be composited without
+   repainting a full-screen radial-gradient background on every frame. */
+.soft-particles > .particle-dot {
+    position:absolute;
+    width:12px;
+    height:12px;
+    margin:-6px 0 0 -6px;
+    pointer-events:none;
+    background:radial-gradient(circle, var(--dot-color) var(--dot-core), transparent var(--dot-edge));
+    filter:drop-shadow(0 0 6px #ffb7c5);
+    transform:translate3d(0, 0, 0);
+    will-change:transform;
+}
+
+.particle-layer-1  { left:10%; top:20%; --dot-color:rgba(255,183,197,.6);  --dot-core:4px; --dot-edge:6px; }
+.particle-layer-2  { left:20%; top:40%; --dot-color:rgba(255,183,197,.5);  --dot-core:3px; --dot-edge:5px; }
+.particle-layer-3  { left:30%; top:70%; --dot-color:rgba(183,75,75,.5);    --dot-core:4px; --dot-edge:6px; }
+.particle-layer-4  { left:40%; top:30%; --dot-color:rgba(255,183,197,.45); --dot-core:3px; --dot-edge:5px; }
+.particle-layer-5  { left:50%; top:80%; --dot-color:rgba(183,75,75,.45);   --dot-core:4px; --dot-edge:6px; }
+.particle-layer-6  { left:60%; top:50%; --dot-color:rgba(255,183,197,.5);  --dot-core:3px; --dot-edge:5px; }
+.particle-layer-7  { left:70%; top:20%; --dot-color:rgba(255,183,197,.4);  --dot-core:4px; --dot-edge:6px; }
+.particle-layer-8  { left:80%; top:60%; --dot-color:rgba(183,75,75,.4);    --dot-core:3px; --dot-edge:5px; }
+.particle-layer-9  { left:90%; top:40%; --dot-color:rgba(255,183,197,.5);  --dot-core:4px; --dot-edge:6px; }
+.particle-layer-10 { left:15%; top:85%; --dot-color:rgba(255,183,197,.45); --dot-core:3px; --dot-edge:5px; }
+.particle-layer-11 { left:35%; top:10%; --dot-color:rgba(183,75,75,.4);    --dot-core:4px; --dot-edge:6px; }
+.particle-layer-12 { left:75%; top:90%; --dot-color:rgba(255,183,197,.45); --dot-core:3px; --dot-edge:5px; }
+
+.particle-layer-1, .particle-layer-5, .particle-layer-9 {
+    animation:floatParticleLayer1 30s linear infinite;
+}
+.particle-layer-2, .particle-layer-6, .particle-layer-10 {
+    animation:floatParticleLayer2 30s linear infinite;
+}
+.particle-layer-3, .particle-layer-7, .particle-layer-11 {
+    animation:floatParticleLayer3 30s linear infinite;
+}
+.particle-layer-4, .particle-layer-8, .particle-layer-12 {
+    animation:floatParticleLayer4 30s linear infinite;
 }
 
 
@@ -429,9 +454,24 @@ body::after{
 }
 
 
-@keyframes floatParticles{
-    from{background-position:0 0,0 0,0 0,0 0;}
-    to{background-position:200px 400px,-300px 200px,150px -300px,-200px -400px;}
+@keyframes floatParticleLayer1 {
+    from { transform:translate3d(0, 0, 0); }
+    to   { transform:translate3d(200px, 400px, 0); }
+}
+
+@keyframes floatParticleLayer2 {
+    from { transform:translate3d(0, 0, 0); }
+    to   { transform:translate3d(-300px, 200px, 0); }
+}
+
+@keyframes floatParticleLayer3 {
+    from { transform:translate3d(0, 0, 0); }
+    to   { transform:translate3d(150px, -300px, 0); }
+}
+
+@keyframes floatParticleLayer4 {
+    from { transform:translate3d(0, 0, 0); }
+    to   { transform:translate3d(-200px, -400px, 0); }
 }
 @media(max-width:768px){
 
@@ -455,11 +495,37 @@ body::after{
     inset:0;
     pointer-events:none;
     z-index:-1;
-    background:
-      radial-gradient(circle at 10% 30%, rgba(255,183,197,.25) 6px, transparent 10px),
-      radial-gradient(circle at 40% 70%, rgba(183,75,75,.2) 7px, transparent 12px),
-      radial-gradient(circle at 80% 20%, rgba(255,183,197,.2) 6px, transparent 10px);
-    animation:driftBack 40s linear infinite;
+}
+
+.soft-particles-back > .back-particle-dot {
+    position:absolute;
+    width:24px;
+    height:24px;
+    margin:-12px 0 0 -12px;
+    pointer-events:none;
+    transform:translate3d(0, 0, 0);
+    will-change:transform;
+}
+
+.back-particle-layer-1 {
+    left:10%;
+    top:30%;
+    background:radial-gradient(circle, rgba(255,183,197,.25) 6px, transparent 10px);
+    animation:driftBackLayer1 40s linear infinite;
+}
+
+.back-particle-layer-2 {
+    left:40%;
+    top:70%;
+    background:radial-gradient(circle, rgba(183,75,75,.2) 7px, transparent 12px);
+    animation:driftBackLayer2 40s linear infinite;
+}
+
+.back-particle-layer-3 {
+    left:80%;
+    top:20%;
+    background:radial-gradient(circle, rgba(255,183,197,.2) 6px, transparent 10px);
+    animation:driftBackLayer3 40s linear infinite;
 }
 
 .micro-sparkles{
@@ -476,9 +542,19 @@ body::after{
     animation:sparkle 6s ease-in-out infinite alternate;
 }
 
-@keyframes driftBack{
-    from{background-position:0 0,0 0,0 0;}
-    to{background-position:-400px 600px,300px -400px,-200px 300px;}
+@keyframes driftBackLayer1 {
+    from { transform:translate3d(0, 0, 0); }
+    to   { transform:translate3d(-400px, 600px, 0); }
+}
+
+@keyframes driftBackLayer2 {
+    from { transform:translate3d(0, 0, 0); }
+    to   { transform:translate3d(300px, -400px, 0); }
+}
+
+@keyframes driftBackLayer3 {
+    from { transform:translate3d(0, 0, 0); }
+    to   { transform:translate3d(-200px, 300px, 0); }
 }
 
 @keyframes sparkle{
@@ -644,8 +720,6 @@ body::after {
 
 .soft-particles {
     z-index: 1;
-    animation: floatParticles 30s linear infinite;
-    will-change: background-position;
 }
 
 .micro-sparkles {
